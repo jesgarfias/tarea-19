@@ -1,0 +1,446 @@
+@import "./_base";
+@import "./_navbar";
+@import "./_components";
+header{
+background-color: var(--color-primario);
+width: 100%;
+@include flexbox-row;
+align-items: center;
+justify-content: space-between;
+}
+.header__logo{
+    @include flexbox-colum;
+    justify-content: center;
+    align-items: center;
+    padding-left: 10px;
+    padding-top: 10px;
+    img{
+        width: 40px;
+    }
+    p{
+        color: var(--letter-color);
+    }
+}
+.header__nav{
+    width: 30%;
+    display: flex;
+    justify-content:space-between;
+    @include tablets{
+        width: 40%;
+    }
+    @include navbar-header;
+}
+.header__submenu{
+    position: absolute;
+    z-index: 70;
+    width: 100%;
+    left: 0;
+    top: 74px;
+    background-color: var(--letter-color);
+    visibility: hidden;
+    opacity: 0;
+
+    .submenu__maincontainer{
+        display: flex;
+        padding: 1rem;
+    }
+}
+.header__submenu--show{
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.6s ease;
+}
+
+.submenu__elemente{
+    padding: 0.6rem;
+    margin: 0.2rem;
+    h1{
+        text-align: center;
+        color: var(--color-primario);
+        font-size: 1.2em;
+    }
+    p{
+        text-align: justify;
+        color: var(--letter-secondary-color);
+        font-size: 1em;
+    }
+}
+.header__div--img{
+    padding-right: 10px;
+    padding-top: 10px;
+}
+.header__img{
+    width: 30px;
+    fill: var(--letter-color);
+    cursor: pointer;
+}
+
+//estilo carrusel
+.carrusel__container{
+    width:70%;
+    height: 37.5rem;
+    margin-top: 1rem;
+    background-color: green;
+    margin-left: 14%;
+    overflow: hidden;
+    position: relative;
+    @include laptops{
+        height: 30.5rem;
+    }
+    @include small{
+        height: 14.5rem;
+    }
+    @include medium{
+        height: 19.5rem;
+    }
+    @include tablets{
+        height: 24.5rem;
+    }
+    @include carrusel-buttons;
+}
+.carrusel__elements{
+    width: 300%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+}
+.carrusel__section{
+    width: calc(100%/3);
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .section__content{
+        @include flexbox-colum;
+    }
+
+    .carrusel__element{
+        width: 70%;
+        @include flexbox-colum;
+        justify-content: center;
+        align-items: center;
+        .element_inside{
+            width: 65%;
+        }
+        p,h1{
+            text-align: center;;
+        }
+    }
+    .carrusel__img--container{
+        width: 29%;
+    }
+    .carrusel__img--auto{
+        width: 18.75rem;
+        height: 32%;
+        @include small{
+            width: 8.75rem;
+            height: 8.75rem;
+        }
+    }
+    .carrusel__text{
+        position: absolute;
+        @include flexbox-colum;
+        justify-content: center;
+        width: 75%;
+        align-items: center;
+        text-align: center;
+    }
+}
+//banner promo
+@include banner;
+//estilo seccion de servicios
+.services__container{
+    height: 36rem;
+    @include flexbox-colum;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    @include tablets{
+        height: 79rem;
+    }
+}
+.services__elements{
+    width: 94%;
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+    height: 100%;
+    h2{
+        font-size: 1.6em;
+    }
+    p{
+        font-size: 1.2em;
+    }
+    @include tablets{
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+    }
+    @include small{
+        flex-direction: column;
+    }
+}
+.services__section{
+    width: 25rem;
+    box-shadow: 2px 2px 8px 6px rgba(0, 0, 0, 0.2);
+    height: 30rem;
+    padding: 1rem;
+    border-radius: 1%;
+    color: var(--letter-secondary-color);
+    @include flexbox-colum;
+    gap: 1rem;
+    text-align: justify;
+    svg{
+        width: 4rem;
+    }
+    button{
+        width: 20%;
+        height: 3rem;
+        background-color: var(--color-primario);
+        color: var(--letter-color);
+        border-radius: 36%;
+        border: solid;
+        font-size: 1rem;      
+    }
+    button:hover{
+        background-color: var(--letter-color);
+        border: solid var(--letter-secondary-color) 2px;
+        color: var(--letter-secondary-color);
+        transition: all ease 0.3s;
+    }
+    @include tablets{
+        width: 100%;
+        height: 34%;
+    }
+}
+//estilo seccion del blog
+.blog__container{
+    width: 100%;
+    @include flexbox-colum;
+    margin-top: 3rem;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    @include tablets{
+        height: 70rem;
+        padding: 1rem;
+    }
+}
+.blog__elements{
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+    width: 70%;
+    height: 34rem;
+   @include tablets{
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+    }
+    @include small{
+        width: 85%;   
+    }
+    @include phones{
+        width: 116%;
+    }
+}
+.blog__section{
+    width: 45%;
+    height: 100%;
+    box-shadow: 2px 2px 8px 6px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    border-radius: 1%;
+    color: var(--letter-secondary-color);
+    @include tablets{
+        width: 85%;
+    }
+    img{
+        width: 100%;
+        height: 55%;
+        @include tablets{
+            height: 55%;
+        }
+    }
+    img:hover{
+        transform: scale(1.1);
+        transition: ease .2s;
+        z-index: 50;
+    }
+    p{
+        text-align: justify;
+    }
+}
+//estilo footer
+.footer__section--direction{
+    width: 100%;
+    background-color: var(--color-primario);
+    color: var(--letter-color);
+    margin-top: 1rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    @include medium{
+        flex-direction:column;
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+    }
+}
+.footer__div--first{
+    width: 100%;
+    @include flexbox-colum;
+    gap: 1rem;
+    p{
+        text-align: justify;
+    }
+    h1{
+        @include medium{
+            text-align: center;
+        }
+    }
+}
+.footer__div--second{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.footer__section--info{
+    width: 100%;
+    @include flexbox-row;
+    justify-content: space-around;
+    img{
+        width: 26rem;
+    }
+    @include tablets{
+        flex-direction: column;
+    }
+}
+.section__info{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.8rem;
+    @include navbar-footer;
+    .info__payment{
+        display: flex;
+        width: 100%;
+    }
+}
+
+//servicios.html page
+//seccion titulo
+.services__content{
+    width: 100%;
+    @include flexbox-colum;
+    align-items: center;
+    background-color: var(--letter-secondary-color);
+    .content__container{
+        @include flexbox-colum;
+        padding: 0.5rem;
+        align-items: center;
+        color: var(--letter-color);
+        h1{
+            text-align: center;
+        }
+    }
+}
+//contenedor de servicios
+.service__container{
+    width: 100%;
+    margin-top: 1rem;
+}
+.service__element{
+    @include flexbox-row;
+    gap: 1.1rem;
+    margin: 1rem;
+    @include medium{
+        @include flexbox-colum;
+    }
+    .service__textContainer{
+        padding: 1rem;
+        flex: 50%;
+        @include flexbox-colum;
+        align-items: center;
+        justify-content: center;
+        h2,h3{
+            margin: 0.5rem;
+            text-align: center;
+        }
+        p{
+            text-align: justify;
+        }
+    }
+    .service__imgContainer{
+        flex: 50%;
+        display: flex;
+        justify-content: center;
+        @include medium{
+            align-items: center;
+        }
+        @include small{
+            align-items: center;
+        }
+        img{
+            width: 85%;
+            height: auto;
+            @include small{
+                height: 14.5rem;
+            }
+            @include medium{
+                height: 19.5rem;
+            }
+        }
+    }
+}
+.service__element--md{
+    background: linear-gradient(270deg, rgba(20,78,77,1) 0%, rgb(20, 103, 82) 54%, rgba(20,78,77,1) 100%);
+    padding: 1rem;
+    color: var(--letter-color);
+}
+.contact__container{
+    width: 100%;
+    margin-top: 1rem;
+    @include flexbox-colum;
+    align-items: center;
+    .contact__description{
+        background-color: var(--letter-secondary-color);
+        color: var(--letter-color);
+    }
+    .contact__form{
+        width: 30%;
+        padding: 1rem;
+        box-shadow: 2px 2px 8px 6px rgba(0, 0, 0, 0.2);
+        margin: 1rem;
+        @include flexbox-colum;
+        gap: 1rem;
+        align-items: center;
+        @include medium{
+            width: 60%;
+        }
+        .form__conten{
+            @include flexbox-colum;
+            width: 85%;
+        }
+        button{
+            background-color: var(--color-primario);
+            color: var(--letter-color);
+            width: 30%;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: var(--letter-color);
+            color: var(--color-primario);
+            transition: all ease 0.2s;
+        }
+    }
+}

@@ -1,0 +1,36 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Oswald", sans-serif;
+}
+@mixin laptops{
+    @media screen and (max-width: 75rem) {@content};
+  }
+  @mixin tablets{
+    @media screen and (max-width: 60rem) {@content};
+  }
+  @mixin medium{
+    @media screen and (max-width: 48.75rem) {@content};
+  }
+  @mixin small{
+    @media screen and (max-width: 39rem) {@content};
+  }
+  @mixin phones{
+    @media screen and (max-width: 30rem) {@content};
+  }
+:root{
+    --color-primario: #025956;
+    --secondary-color: #2faea8;
+    --letter-color:#e5e5e5fd;
+    --letter-secondary-color:#24395afc;
+    --letter-size:14px;
+}
+@mixin flexbox-row{
+  display: flex;
+  flex-direction: row;
+}
+@mixin flexbox-colum{
+  display:flex;
+  flex-direction: column;
+}
