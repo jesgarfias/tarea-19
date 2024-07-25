@@ -1,0 +1,35 @@
+@mixin navbar-header{
+    .header__navList{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+        @include small{
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    .header__link{
+        text-decoration: none;
+        color: var(--letter-color);
+        font-weight: 500;
+    }
+    .header__link:hover{
+        border-bottom: solid var(--letter-color) 2px;
+    }
+}
+
+@mixin navbar-footer{
+    nav{
+        display: flex;
+        flex-direction: column;
+    }
+    a{
+        text-decoration: none;
+        color: var(--letter-secondary-color);
+    }
+    a:hover{
+        color: #676767
+    }
+}
